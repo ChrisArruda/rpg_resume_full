@@ -118,10 +118,8 @@ if (data.badges && Array.isArray(data.badges)) {
 // Resume
 const resumeBtn = $('#downloadResume');
 if (data.resumePdf && data.resumePdf.trim() !== '') {
-  // Make sure the path is relative to the server root
-  const resumeUrl = data.resumePdf.trim().startsWith('/') 
-    ? data.resumePdf.trim() 
-    : '/' + data.resumePdf.trim();
+  // Use the path as is without modifying it
+  const resumeUrl = data.resumePdf.trim();
   
   console.log('Setting up resume download with URL:', resumeUrl);
   
