@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPG Resume | Chris Arruda</title>
+  <meta name="description" content="An RPG style interactive resume and portfolio.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top HUD -->
+  <header class="hud container" role="banner">
+    <div class="hud__left">
+      <h1 class="hud__title" id="playerName">Chris Arruda</h1>
+      <div class="hud__subtitle" aria-live="polite">
+        <span>Level <span id="level">1</span></span>
+        <span class="divider">|</span>
+        <span id="className">Information Systems</span>
+      </div>
+    </div>
+    <div class="hud__right">
+      <div class="bar" aria-label="HP">
+        <label for="hpBar">HP</label>
+        <div class="bar__track"><div id="hpBar" class="bar__fill" style="width:0%"></div></div>
+      </div>
+      <div class="bar" aria-label="MP">
+        <label for="mpBar">MP</label>
+        <div class="bar__track"><div id="mpBar" class="bar__fill" style="width:0%"></div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="container tabs" aria-label="Primary">
+    <button class="tab is-active" data-target="#character" aria-controls="character">Character [1]</button>
+    <button class="tab" data-target="#quests" aria-controls="quests">Quests [2]</button>
+    <button class="tab" data-target="#guilds" aria-controls="guilds">Guilds [3]</button>
+    <button class="tab" data-target="#overview" aria-controls="overview">Overview [4]</button>
+    <button class="tab" data-target="#achievements" aria-controls="achievements">Achievements [5]</button>
+  </nav>
+
+  <main class="container grid" role="main">
+    <!-- Character Card -->
+    <section class="panel" id="character" tabindex="-1">
+      <h2 class="panel__title">Character</h2>
+      <div class="character">
+        <div class="portrait" aria-label="Character portrait">
+          <img src="JRPG_PORTRAIT.png" alt="Portrait of Chris Arruda" class="portrait__image">
+        </div>
+        <div class="sheet">
+          <ul class="stats" id="statsList" aria-label="Stats"></ul>
+          <div class="inventory">
+            <h3>Inventory</h3>
+            <ul id="inventoryList" aria-label="Inventory items"></ul>
+          </div>
+          <div class="row">
+            <button class="btn" id="contactBtn">Start Quest</button>
+            <button class="btn btn--ghost" id="copyEmail">Copy Email</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quests -->
+    <section class="panel" id="quests" tabindex="-1">
+      <h2 class="panel__title">Quests Completed</h2>
+      <ul class="quest-list" id="questList" aria-label="Completed quests"></ul>
+    </section>
+
+    <!-- Guilds -->
+    <section class="panel" id="guilds" tabindex="-1">
+      <h2 class="panel__title">Guilds Joined</h2>
+      <ul class="guild-list" id="guildList" aria-label="Guild history"></ul>
+    </section>
+
+    <!-- Character Overview -->
+    <section class="panel" id="overview" tabindex="-1">
+      <h2 class="panel__title">Character Overview</h2>
+      <div class="overview">
+        <div class="tree">
+          <h3>Skill Tree</h3>
+          <ul id="skillTree"></ul>
+        </div>
+        <div class="resume">
+          <h3>Resume</h3>
+          <p id="bioText"></p>
+          <a class="btn btn--ghost" id="downloadResume" href="#" download>Download PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements / Badges -->
+    <section class="panel" id="achievements" tabindex="-1">
+      <h2 class="panel__title">Achievements</h2>
+      <ul class="badges" id="badgesList"></ul>
+    </section>
+  </main>
+
+  <footer class="container footer" role="contentinfo">
+    <small>Keyboard: 1 2 3 4 5 to switch tabs. J/K or ← → to cycle. Enter activates focused button.</small>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
