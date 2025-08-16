@@ -60,7 +60,7 @@ export const data = {
     { name: "Fast Learner" },
     { name: "Bug Squisher" }
   ],
-  resumePdf: "ChristianArrudaResume.pdf"
+  resumePdf: "./ChristianArrudaResume.pdf"
 };
 
 // Debug: Log important data on load
